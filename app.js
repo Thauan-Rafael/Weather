@@ -15,7 +15,6 @@ app.post('/', function(req,res){
     const url = 'https://api.openweathermap.org/data/2.5/weather?lat='+latitude+'&lon='+longitude+'&appid='+appId+'&units=metric'
     https.get(url, function(response) {
       response.on('data', function(data) {
-          console.log(url);
           const weatherData = JSON.parse(data)
           const temperature = weatherData.main.temp
           const description = weatherData.weather[0].description
@@ -25,7 +24,6 @@ app.post('/', function(req,res){
           res.write('<h3>Description of time: '+description+'</h3>')
           res.write('<img src='+imgUrl+' />')
           res.send()
-          console.log(url);
       })
     })
   }
