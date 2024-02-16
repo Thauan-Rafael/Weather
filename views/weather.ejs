@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather searcher</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Weather Searcher</h1>
+    </header>
+    <main id="weatherData">
+        <% if (weatherInfo != false) { %>
+            <h1><%= weatherInfo.name %> temperature is <%= weatherInfo.temperature %> Celsius</h1>
+            <h3>Description of time: <%= weatherInfo.description %></h3>
+            <img src="https://openweathermap.org/img/wn/<%= weatherInfo.icon %>.png" />
+        <% } else { %>
+            <h1>See the Weather</h1>
+            <h3>Insert the latitude and longitude below</h3>
+            <h3>Example: Paris</h3>
+            <h4>Latitude: 48.8566, Longitude: 2.3522 </h4>
+
+        <% } %>
+    </main>
+    <footer>
+        <form action="/" method="post">
+            <input id="latInput" type="text" name="latitude" placeholder="Latitude" required>
+            <input id="lonInput" type="text" name="longitude" placeholder="Longitude" required>
+            <button type="submit">Search</button>
+        </form>
+    </footer>
+</body>
+</html>
