@@ -1,35 +1,81 @@
+*{
+    box-sizing: border-box;
+}
 body {
     display: grid;
-    grid-template-rows: auto 1fr auto; /* Header, Main Content, Footer */
+    grid-template-rows: auto 1fr auto;
     min-height: 100vh;
     margin: 0;
-    box-sizing: border-box;
 }
 
 header {
     text-align: center;
-    background-color: #4512d3;
     color: #f5efef;
+    text-shadow: 3px 3px #0f0f0f;
+    background: linear-gradient(90deg, rgb(76, 52, 184) 0%, rgb(169, 17, 199) 33%, rgb(216, 132, 22) 66%, rgb(219, 45, 14) 100%);
 }
 main{
-    margin: auto;
+    background: url('weatherimg.jpg');
+    display: grid;
+    width: 100%;
+    height: 100%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.container{
+    background-color: #f5efef;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 80%;
+    align-items: center;
+    padding: 0 !important;
+}
+#upIcons{
+    border-radius: 18px 18px 0 0;
+}
+#downIcons{
+    border-radius: 0 0 18px 18px;
+}
+#upIcons,#downIcons{
+    background-color: #a19b9b;
+    padding: 2%;
+    height: 100%;
+    width: 100%;
+}
+#mainContent{
+    display: grid;
+    align-items: center;
+    padding: 0 2% 0 2%;
+    height: 100%;
+    border-top: 2px solid #0f0f0f;
+    border-bottom: 2px solid #0f0f0f;
 }
 footer {
-    text-align: center;
-    padding: 2% 0 2% 0;
-    background-color: #4512d3;
+    display: flex;
+    justify-content: center;
+    padding: 2% 1% 2% 1%;
+    background: linear-gradient(90deg, rgb(76, 52, 184) 0%, rgb(169, 17, 199) 33%, rgb(216, 132, 22) 66%, rgb(219, 45, 14) 100%);
+}
+form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
 }
 input{
-    width: 30%;
     text-align: center;
-    height: 4vh;
-    border-radius: 20px;
-    font-size: 100%;
+    border: 2px solid #0f0f0f;
+    text-shadow: 1px 1px #2c2b2b;
 }
-button{
-    width: 20%;
-    height: 5vh;
-    border-radius: 20px;
-    font-size: 100%;
+input,.btn{
+    width: 40%;
+    height: 100%;
+    border-radius: 30px !important;
+    font-size: 4vh !important;
 }

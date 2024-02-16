@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Weather searcher</title>
     <link rel="stylesheet" href="/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
     <header>
@@ -11,23 +12,45 @@
     </header>
     <main id="weatherData">
         <% if (weatherInfo != false) { %>
-            <h1><%= weatherInfo.name %> temperature is <%= weatherInfo.temperature %> Celsius</h1>
-            <h3>Description of time: <%= weatherInfo.description %></h3>
-            <img src="https://openweathermap.org/img/wn/<%= weatherInfo.icon %>.png" />
-        <% } else { %>
-            <h1>See the Weather</h1>
-            <h3>Insert the latitude and longitude below</h3>
-            <h3>Example: Paris</h3>
-            <h4>Latitude: 48.8566, Longitude: 2.3522 </h4>
-
+            <div class="container">
+                <h2><%= weatherInfo.name %> temperature is <%= weatherInfo.temperature %> Celsius</h2>
+                <h3>Description of time: <%= weatherInfo.description %></h3>
+                <img src="https://openweathermap.org/img/wn/<%= weatherInfo.icon %>.png" />
+            </div>
+            <% } else { %>
+            <div class="container">
+                <div id="upIcons">
+                    <img src="https://openweathermap.org/img/wn/01d.png"/>
+                    <img src="https://openweathermap.org/img/wn/01n.png"/>
+                    <img src="https://openweathermap.org/img/wn/02d.png"/>
+                    <img src="https://openweathermap.org/img/wn/02n.png"/>
+                    <img src="https://openweathermap.org/img/wn/03d.png"/>
+                    <img src="https://openweathermap.org/img/wn/04d.png"/>
+                </div>
+                <div id="mainContent">
+                    <h2>See the Weather</h2>
+                    <h3>Insert the latitude and longitude below</h3>
+                    <h4>Example: Paris</h4>
+                    <h4>Latitude: 48.8566, Longitude: 2.3522 </h4>
+                </div>
+                <div id="downIcons">
+                    <img src="https://openweathermap.org/img/wn/09d.png"/>
+                    <img src="https://openweathermap.org/img/wn/10d.png"/>
+                    <img src="https://openweathermap.org/img/wn/10n.png"/>
+                    <img src="https://openweathermap.org/img/wn/11d.png"/>
+                    <img src="https://openweathermap.org/img/wn/13d.png"/>
+                    <img src="https://openweathermap.org/img/wn/50d.png"/>
+                </div>
+            </div>
         <% } %>
     </main>
     <footer>
         <form action="/" method="post">
             <input id="latInput" type="text" name="latitude" placeholder="Latitude" required>
             <input id="lonInput" type="text" name="longitude" placeholder="Longitude" required>
-            <button type="submit">Search</button>
+            <button class="btn btn-success" type="submit">Search</button>
         </form>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
