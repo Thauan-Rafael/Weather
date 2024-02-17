@@ -13,13 +13,38 @@
     <main id="weatherData">
         <% if (weatherInfo != false) { %>
             <div class="container">
-                <h2><%= weatherInfo.name %> temperature is <%= weatherInfo.temperature %> Celsius</h2>
-                <h3>Description of time: <%= weatherInfo.description %></h3>
-                <img src="https://openweathermap.org/img/wn/<%= weatherInfo.icon %>.png" />
+                <div id="containerHeader">
+                    <h1><%= weatherInfo.name %> - <%= weatherInfo.country %></h1>
+                </div>
+                <div id="mainContent">
+                    <table class="table table-bordered" style="width: 100%; height: 100%;">
+                        <tr>
+                            <th>Description</th>
+                            <td><%=weatherInfo.description%></td>
+                        </tr>
+                        <tr>
+                            <th>Temperature</th>
+                            <td><%=weatherInfo.tempC%> °C | <%=weatherInfo.tempF%> °F | <%=weatherInfo.tempK%> K</td>
+                        </tr>
+                        <tr>
+                            <th>Humidity</th>
+                            <td><%=weatherInfo.humidity%> %</td>
+                        </tr>
+                        <tr>
+                            <th>Wind speed</th>
+                            <td><%=weatherInfo.windSpeed%> km/h</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="containerFooter">
+                    <img src="https://openweathermap.org/img/wn/<%= weatherInfo.icon %>.png" />
+                    <img src="https://openweathermap.org/img/wn/<%= weatherInfo.icon %>.png" />
+                    <img src="https://openweathermap.org/img/wn/<%= weatherInfo.icon %>.png" />
+                </div>
             </div>
             <% } else { %>
             <div class="container">
-                <div id="upIcons">
+                <div id="containerHeader">
                     <img src="https://openweathermap.org/img/wn/01d.png"/>
                     <img src="https://openweathermap.org/img/wn/01n.png"/>
                     <img src="https://openweathermap.org/img/wn/02d.png"/>
@@ -30,10 +55,10 @@
                 <div id="mainContent">
                     <h2>See the Weather</h2>
                     <h3>Insert the latitude and longitude below</h3>
-                    <h4>Example: Paris</h4>
+                    <h4>Example: Saint-Merri, Paris</h4>
                     <h4>Latitude: 48.8566, Longitude: 2.3522 </h4>
                 </div>
-                <div id="downIcons">
+                <div id="containerFooter">
                     <img src="https://openweathermap.org/img/wn/09d.png"/>
                     <img src="https://openweathermap.org/img/wn/10d.png"/>
                     <img src="https://openweathermap.org/img/wn/10n.png"/>

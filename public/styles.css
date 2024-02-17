@@ -12,10 +12,11 @@ header {
     text-align: center;
     color: #f5efef;
     text-shadow: 3px 3px #0f0f0f;
-    background: linear-gradient(90deg, rgb(76, 52, 184) 0%, rgb(169, 17, 199) 33%, rgb(216, 132, 22) 66%, rgb(219, 45, 14) 100%);
+    background: linear-gradient(90deg, rgb(76, 52, 184) 0%, rgb(13, 201, 235) 75%)
 }
 main{
-    background: url('weatherimg.jpg');
+    /*background: url('weatherimg.jpg'); */
+    background-color: #f5efef;
     display: grid;
     width: 100%;
     height: 100%;
@@ -31,34 +32,46 @@ main{
     border: 2px solid black;
     border-radius: 20px;
     height: 80%;
+    width: 60vw !important;
     align-items: center;
     padding: 0 !important;
 }
-#upIcons{
+#containerHeader{
     border-radius: 18px 18px 0 0;
 }
-#downIcons{
+#containerFooter{
     border-radius: 0 0 18px 18px;
 }
-#upIcons,#downIcons{
+#containerHeader,#containerFooter{
     background-color: #a19b9b;
     padding: 2%;
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 #mainContent{
     display: grid;
     align-items: center;
-    padding: 0 2% 0 2%;
     height: 100%;
     border-top: 2px solid #0f0f0f;
     border-bottom: 2px solid #0f0f0f;
 }
+table{
+    margin: 0 !important;
+}
+th,td{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 3vh;
+    border: 1px solid #0f0f0f !important;
+}
 footer {
     display: flex;
     justify-content: center;
-    padding: 2% 1% 2% 1%;
-    background: linear-gradient(90deg, rgb(76, 52, 184) 0%, rgb(169, 17, 199) 33%, rgb(216, 132, 22) 66%, rgb(219, 45, 14) 100%);
+    padding: 1% 1% 1% 1%;
+    background: linear-gradient(90deg, rgb(76, 52, 184) 0%, rgb(13, 201, 235) 75%)
 }
 form{
     width: 100%;
