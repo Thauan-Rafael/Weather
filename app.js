@@ -19,6 +19,8 @@ app.post('/', function(req,res){
     const decimalPattern = /^-?\d+(\.\d+)?$/
     const dmsPattern = /^-?\d+°\s*\d+'?\s*\d+"?$/;
     var {latitude, longitude} = req.body;
+    latitude = latitude.replace(',','.');
+    longitude = longitude.replace(',','.')
     if(decimalPattern.test(latitude) == false && dmsPattern.test(latitude) == false || decimalPattern.test(longitude) == false && dmsPattern.test(longitude) == false){
       dataFound = 'Invalid values';
       res.render('weather',{weatherInfo, dataFound});      

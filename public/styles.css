@@ -92,7 +92,7 @@ input,.btn{
     font-size: 4vh !important;
     border: solid 2px #0f0f0f !important;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 576px) {
     header{
         padding: 0 1% 0 1%;
     }
@@ -123,5 +123,37 @@ input,.btn{
     }
     th,td{
         font-size: 1.6vh;
+    }
+}
+@media screen and (max-height: 475px){
+    .container{
+        height: 90% !important;
+        grid-template-rows: 0.5fr 1fr 0.5fr;
+    }
+    #containerHeader, #containerFooter{
+        padding: 0;
+    }
+    #containerHeader h1{
+        font-size: 6vh;
+    }
+    img{
+        height: 80%
+    }
+    #mainContent h2{
+        font-size: 5vh;
+    }
+    h3{
+        font-size: 4.5vh !important;
+    }
+    h4{
+        font-size: 4vh !important;
+    }
+    #mainContent h2,h3,h4{
+        margin: 0 !important;
+    }
+    #mainContent
+    th,td{
+        padding: 0 !important;
+        font-size: 3.5vh;
     }
 }
