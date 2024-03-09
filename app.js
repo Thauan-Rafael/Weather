@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const https = require('https');
+require('dotenv').config();
 
 app.set('view engine','ejs');
 app.use(express.urlencoded({ extended: true}));
@@ -14,8 +15,7 @@ app.get('/', (req,res) => {
 });
 app.listen(3000, () => {console.log('App running on port 3000')});
 
-app.post('/', function(req,res){
-  
+app.post('/', function(req,res){  
     const decimalPattern = /^-?\d+(\.\d+)?$/
     const dmsPattern = /^-?\d+°\s*\d+'?\s*\d+"?$/;
     var {latitude, longitude} = req.body;
@@ -44,7 +44,8 @@ app.post('/', function(req,res){
           longitude = (parseFloat(dmsLon[0] * -1) + (parseFloat(dmsLon[1])/60) + (parseFloat(dmsLon[2])/3600))*-1
         }
       }
-      const appId = '7e9f5db2e73b7f2c43c3354263178440';
+      const appId = process.env.key;
+      console.log(appId);
       const url = 'https://api.openweathermap.org/data/2.5/weather?lat='+latitude+'&lon='+longitude+'&appid='+appId+'&units=metric';
       https.get(url, function(response) {
         response.on('data', function(data) {
