@@ -45,7 +45,6 @@ app.post('/', function(req,res){
         }
       }
       const appId = process.env.key;
-      console.log(appId);
       const url = 'https://api.openweathermap.org/data/2.5/weather?lat='+latitude+'&lon='+longitude+'&appid='+appId+'&units=metric';
       https.get(url, function(response) {
         response.on('data', function(data) {
